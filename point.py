@@ -18,6 +18,10 @@ class Point(object):
         Args:
             x (float): _description_
             y (float): _description_
+
+        Raises:
+            AssertionError: 'x must be a float'
+            AssertionError: 'y must be a float'
         """
         assert isinstance(x, float), 'x must be a float'
         assert isinstance(y, float), 'y must be a float'
@@ -30,6 +34,7 @@ class Point(object):
         Returns:
             str: (x, y)
         """
+
         return f'({self.x}, {self.y})'
 
     def __eq__(self, other) -> bool:
@@ -40,7 +45,11 @@ class Point(object):
 
         Returns:
             bool: True if both points are the same, False if not
+
+        Raises:
+            AssertionError: 'other must be of type Point'
         """
+        assert isinstance(other,Point), 'other must be of type Point'
         if self.x == other.x:
             if self.y == other.y:
                 return True

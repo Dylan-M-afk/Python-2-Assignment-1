@@ -99,7 +99,11 @@ class Date(object):
 
         Args:
             new_day (int): a value to set the private day value to
+
+        Raises:
+            AssertionError: 'New day must be an int'
         """
+        assert isinstance(new_day,int), 'New day must be an int'
         self.__day = new_day
 
     @month.setter
@@ -108,7 +112,11 @@ class Date(object):
 
         Args:
             new_month (int): a value to set the private month value to
+
+        Raises:
+            AssertionError: 'New month must be an int'
         """
+        assert isinstance(new_month, int), 'New month must be an int'
         self.__month = new_month
 
     @year.setter
@@ -117,7 +125,11 @@ class Date(object):
 
         Args:
             new_year (int): a value to set the private month value to
+
+        Raises:
+            AssertionError: 'New year must be an int'
         """
+        assert isinstance(new_year, int), 'New year must be an int'
         self.__year = new_year
 
     @property

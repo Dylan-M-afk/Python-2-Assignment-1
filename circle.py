@@ -27,6 +27,10 @@ class Circle(object):
         Args:
             radius (float): radius of the circle. Defaults to 1.0.
             color (str): color of the circle. Defaults to 'Red'.
+
+        Raises:
+            AssertionError: 'radius must be a float'
+            AssertionError: 'color must be a str'
         """
 
         assert isinstance(radius, float), 'radius must be a float'

@@ -32,13 +32,20 @@ class Employee(object):
             last_name (str): employee's last name
             salary (float): employee's salary
             date_of_birth (Date): DOB of employee in datetime format
+
+        Raises:
+            AssertionError: 'first_name must be of type str'
+            AssertionError: 'last_name must be of type str'
+            AssertionError: 'date_of_birth must be of type datetime.date'
+            AssertionError: 'date_of_birth must be of type datetime.date'
+            AssertionError: 'Salary must be of type int or float'
         """
         assert isinstance(first_name, str), 'first_name must be of type str'
         assert isinstance(last_name, str), 'last_name must be of type str'
         assert isinstance(date_of_birth, datetime.date), 'date_of_birth must be of type datetime.date'
         # The test cases provide an int but the assignment pdf says only allow float?
         # allowing both for now but can easily be changed
-        assert type(salary) in [int,float]
+        assert type(salary) in [int,float], 'Salary must be of type int or float'
         self.__first_name = first_name
         self.__last_name = last_name
         self.__employee_id = 'E' + str(Employee.employee_id_counter).zfill(4)
@@ -101,6 +108,9 @@ class Employee(object):
         Args:
             raise_percent (int,float): the percent value to increase employee's salary by.
             ex 10 will raise salary by 10%
+
+        Raises:
+            AssertionError: 'raise_percent must be greater than 0'
         """
         assert raise_percent > 0, 'raise_percent must be greater than 0'
         self.__salary += (self.__salary * (raise_percent / 100))

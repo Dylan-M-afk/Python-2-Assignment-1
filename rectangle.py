@@ -30,9 +30,13 @@ class Rectangle(object):
         Args:
             bottom_left_corner (Point): _description_
             top_right_corner (Point): _description_
+
+        Raises:
+            AssertionError: 'bottom left corner must be of type Point'
+            AssertionError: 'top right corner must be of type Point'
         """
-        assert type(bottom_left_corner) == Point
-        assert type(top_right_corner) == Point
+        assert isinstance(bottom_left_corner,Point), 'bottom left corner must be of type Point'
+        assert isinstance(top_right_corner,Point), 'top right corner must be of type Point'
         self.__bottom_left_corner = bottom_left_corner
         self.__top_right_corner = top_right_corner
 

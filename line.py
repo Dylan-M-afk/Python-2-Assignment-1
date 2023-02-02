@@ -26,8 +26,12 @@ class Line(object):
         Args:
             start_point (Point): starting point of a Line on a cartesian plane
             end_point (Point): ending point of a Line on a cartesian plane
+
+        Raises:
+            AssertionError: 'start_point must be of type Point'
+            AssertionError: 'end_point must be of type Point'
         """
-        assert isinstance(start_point, Point), 'start_point must of of type Point'
+        assert isinstance(start_point, Point), 'start_point must be of type Point'
         assert isinstance(end_point, Point), 'end_point must be of type Point'
         self.__start_point = start_point
         self.__end_point = end_point
@@ -55,8 +59,12 @@ class Line(object):
         """setter property for end_point
 
         Args:
-            new_end_point (Point): _description_
+            new_end_point (Point): New end point to set end_point to
+
+        Raises:
+            AssertionError: 'new_end_point must be of type Point'
         """
+        assert isinstance(new_end_point,Point), 'new_end_point must be of type Point'
         self.__end_point = new_end_point
 
     @property
@@ -78,6 +86,9 @@ class Line(object):
 
         Returns:
             bool: True if self.length < other.length, False otherwise
+
+        Raises:
+            AssertionError: 'Can only compare with objects of the Line class'
         """
         assert isinstance(other, Line), 'Can only compare with objects of the Line class'
         if self.length < other.length:
@@ -92,6 +103,9 @@ class Line(object):
 
                 Returns:
                     bool: True if self.length > other.length, False otherwise
+
+        Raises:
+            AssertionError: 'Can only compare with objects of the Line class'
         """
         assert isinstance(other, Line), 'Can only compare with objects of the Line class'
         if self.length > other.length:
@@ -106,6 +120,9 @@ class Line(object):
 
             Returns:
                     bool: True if self.length == other.length, False otherwise
+
+        Raises:
+            AssertionError: 'Can only compare with objects of the Line class'
         """
         assert isinstance(other, Line), 'Can only compare with objects of the Line class'
         if self.length == other.length:
